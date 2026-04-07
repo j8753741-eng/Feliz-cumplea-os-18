@@ -235,16 +235,18 @@
 
     </div>
 
-    <!-- AUDIO -->
-    <iframe id="ytplayer"
-  style="position:absolute; opacity:0; pointer-events:none;"
-  width="1"
-  height="1"
-  src="https://www.youtube.com/embed/FE_KnGLsX5c?autoplay=1&loop=1&playlist=FE_KnGLsX5c"
-  frameborder="0"
-  allow="autoplay; encrypted-media">
-    </iframe>
+    <button class="btn" onclick="startMusic()">
+  🎶 Activar música
+</button>
 
+<div style="margin-top:20px;">
+  <iframe id="ytplayer" width="100%" height="315"
+    src=""
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
   </div>
 
   <script>
@@ -293,7 +295,10 @@
 
         generateConfetti();
 
-    
+    function startMusic() {
+  document.getElementById("ytplayer").src =
+    "https://www.youtube.com/embed/FE_KnGLsX5c?autoplay=1&loop=1&playlist=FE_KnGLsX5c";
+    }
         
   </script>
 
