@@ -323,16 +323,22 @@
 
     // Generar confetti
     function generateConfetti() {
-      confetti.innerHTML = "";
-      for (let i = 0; i < 50; i++) {
-        const piece = document.createElement("span");
-        piece.style.left = Math.random() * 100 + "%";
-        piece.style.animationDelay = Math.random() * 3 + "s";
-        piece.style.background = `hsl(${Math.random() * 360}, 80%, 70%)`;
-        piece.style.transform = `rotate(${Math.random() * 360}deg)`;
-        confetti.appendChild(piece);
-      }
-      confetti.classList.add("active");
+  confetti.innerHTML = "";
+  for (let i = 0; i < 50; i++) {
+    const piece = document.createElement("span");
+    piece.style.left = Math.random() * 100 + "%";
+    piece.style.animationDelay = Math.random() * 3 + "s";
+    piece.style.background = `hsl(${Math.random() * 360}, 80%, 70%)`;
+    piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+    confetti.appendChild(piece);
+  }
+  confetti.classList.add("active");
+
+  // 🔥 NUEVO: quitar confeti después de 6 segundos
+  setTimeout(() => {
+    confetti.classList.remove("active");
+    confetti.innerHTML = "";
+  }, 6000);
     }
 
     const interval = setInterval(() => {
